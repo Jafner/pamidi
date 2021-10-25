@@ -23,7 +23,13 @@ Download the script (via `curl` or `wget`) and `chmod +x pa-xtouch-control` to m
 You can do all of these steps with:
 
 ```bash
-
+curl -o /usr/bin/pa_xtouch_control.sh https://raw.githubusercontent.com/Jafner/pa-xtouch-control/main/pa_xtouch_control.sh && \
+chmod +x /usr/bin/pa_xtouch_control.sh && \
+mkdir -p ~/.config/systemd/user && \
+curl -o ~/.config/systemd/user/pa_xtouch_control.service https://raw.githubusercontent.com/Jafner/pa-xtouch-control/main/pa_xtouch_control.service && \
+systemctl --user daemon-reload && \
+systemctl --user enable pa_xtouch_control.service && \
+systemctl --user start pa_xtouch_control.service
 ```
 
  
