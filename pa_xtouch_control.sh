@@ -197,9 +197,17 @@ get_stream_index_from_pid(){
 	done
 }
 
-get_pid_from_binary(){
-	# todo
-	echo "Not yet implemented"
+get_binary_from_pid(){
+	output="$(paste -d"\t" \
+		<(printf '%s' "$output" | grep 'application.process.id' | cut -d'"' -f 2) \
+		<(printf '%s' "$output" | grep 'application.process.binary' | cut -d'"' -f 2))"
+
+	echo "$output" | while read line ; do
+		pid=$(echo "$line" | cut -f1)
+		if [[ "$pid" == "$1" ]]; then
+			echo "$line" | cut -f2
+		fi
+	done
 }
 
 bind_application() {

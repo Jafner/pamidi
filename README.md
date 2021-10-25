@@ -10,8 +10,22 @@ I am open to supporting other window systems if there is sufficient interest.
 
 Download the script (via `curl` or `wget`) and `chmod +x pa-xtouch-control` to make it executable. Then run it with `./pa-xtouch-control` and test your Behringer X-Touch Mini to make sure everything is working.
 
-# Installation as a daemon
- TODO
+# Installation as a daemon (`systemd`)
+1. Download the `pa_xtouch_control.sh` and `pa_xtouch_control.service` files. 
+2. Make the `pa_xtouch_control.sh` script executable with `chmod +x pa_xtouch_control.sh`.
+3. Place `pa_xtouch_control.sh` into `/usr/bin/` with `mv pa_xtouch_control.sh /usr/bin/`.
+4. Place `pa_xtouch_control.service` into `~/.config/systemd/user/` (just 'user', not your username) with `mv pa_xtouch_control.service ~/.config/systemd/user/`
+5. Create this directory if it does not already exist `mkdir -p ~/.config/systemd/user/`.
+6. Reload systemd with `systemctl --user daemon-reload`.
+7. Enable autostart of the systemd service with `systemctl --user enable pa_xtouch_control.service`.
+8. Start the service with `systemctl --user start pa_xtouch_control.service`.
+
+You can do all of these steps with:
+
+```bash
+
+```
+
  
 # Modifying the script
 
