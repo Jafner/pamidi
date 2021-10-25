@@ -34,7 +34,7 @@ initialize(){
 	echo "Checking for xdotool"
 	if ! hash xdotool &> /dev/null; then
 		echo "xdotool could not be found, exiting"
-		exit
+		exit 2
 	else
 		echo "xdotool found"
 	fi
