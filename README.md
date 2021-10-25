@@ -8,7 +8,7 @@ I am open to supporting other window systems if there is sufficient interest.
 
 # Installation as a foreground script
 
-Download the script (via `curl` or `wget`) and `chmod +x pa-xtouch-control` to make it executable. Then run it with `./pa-xtouch-control` and test your Behringer X-Touch Mini to make sure everything is working.
+Download the script (via `curl` or `wget`) and `chmod +x pa_xtouch_control` to make it executable. Then run it with `./pa_xtouch_control` and test your Behringer X-Touch Mini to make sure everything is working.
 
 # Installation as a daemon (`systemd`)
 1. Download the `pa_xtouch_control.sh` and `pa_xtouch_control.service` files. 
