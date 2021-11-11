@@ -11,4 +11,4 @@ systemctl --user daemon-reload
 systemctl --user enable pamidi.service
 systemctl --user start pamidi.service
 
-edho "Done!"
+echo "Done!"
