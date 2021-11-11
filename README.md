@@ -1,38 +1,22 @@
-# pa-xtouch-control
- Control PulseAudio and X with a Behringer X-Touch Mini
+# pamidi
+ Control PulseAudio and X with a Behringer X-Touch Mini (or other MIDI controllers, with some customization).
  
- # Dependencies
- This program was written to work within the stock Pop!_OS desktop environment (running X and PulseAudio) with the `xdotool` package installed to enable binding the currently-focused application to a column.  
+# Dependencies
+This program was written to work within the stock Pop!_OS desktop environment (running X and PulseAudio) with the `xdotool` package installed to enable binding the currently-focused application to a column.  
  
 I am open to supporting other window systems if there is sufficient interest.
 
 # Installation as a foreground script
 
-Download the script (via `curl` or `wget`) and `chmod +x pa_xtouch_control` to make it executable. Then run it with `./pa_xtouch_control` and test your Behringer X-Touch Mini to make sure everything is working.
+1. Clone this repository. `git clone https://github.com/Jafner/pamidi.git`
+2. Make the script executable. `chmod +x pamidi.sh`
+3. Run the script. `./pamidi.sh`
 
-# Installation as a daemon (`systemd`)
-1. Download the `pa_xtouch_control.sh` and `pa_xtouch_control.service` files. 
-2. Make the `pa_xtouch_control.sh` script executable with `chmod +x pa_xtouch_control.sh`.
-3. Place `pa_xtouch_control.sh` into `/usr/bin/` with `mv pa_xtouch_control.sh /usr/bin/`.
-4. Place `pa_xtouch_control.service` into `~/.config/systemd/user/` (just 'user', not your username) with `mv pa_xtouch_control.service ~/.config/systemd/user/`
-5. Create this directory if it does not already exist `mkdir -p ~/.config/systemd/user/`.
-6. Reload systemd with `systemctl --user daemon-reload`.
-7. Enable autostart of the systemd service with `systemctl --user enable pa_xtouch_control.service`.
-8. Start the service with `systemctl --user start pa_xtouch_control.service`.
+# Installation as a daemon with `systemd`
+1. Clone this repository. `git clone https://github.com/Jafner/pamidi.git`
+2. Make the installation script executable with `chmod +x install_daemon_systemd.sh`
+3. Run the installation script with `./install_daemon_systemd.sh`
 
-You can do all of these steps with:
-
-```bash
-curl -o /usr/bin/pa_xtouch_control.sh https://raw.githubusercontent.com/Jafner/pa-xtouch-control/main/pa_xtouch_control.sh && \
-chmod +x /usr/bin/pa_xtouch_control.sh && \
-mkdir -p ~/.config/systemd/user && \
-curl -o ~/.config/systemd/user/pa_xtouch_control.service https://raw.githubusercontent.com/Jafner/pa-xtouch-control/main/pa_xtouch_control.service && \
-systemctl --user daemon-reload && \
-systemctl --user enable pa_xtouch_control.service && \
-systemctl --user start pa_xtouch_control.service
-```
-
- 
 # Modifying the script
 
 I've done my best to make the script readable and modifyable. Here is a summary of how the script is laid out:  

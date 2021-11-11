@@ -1,8 +1,0 @@
-[Unit]
-Description=PulseAudio X-Touch control daemon
-
-[Service]
-ExecStart=/usr/bin/pa_xtouch_control.sh
-
-[Install]
-WantedBy=default.target

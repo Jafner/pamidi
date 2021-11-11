@@ -1,0 +1,8 @@
+[Unit]
+Description=Control PulseAudio with a Midi device
+
+[Service]
+ExecStart=/usr/bin/pamidi.sh
+
+[Install]
+WantedBy=default.target

@@ -48,6 +48,7 @@ initialize(){
 	col_8_app_pid=-1
 	assign_profile_1
 	print_col_app_ids
+	notify-send "Initialized pamidi"
 }
 
 assign_profile_1() {
@@ -120,6 +121,16 @@ change_volume_standard() {
 			pactl set-sink-input-volume $stream_id $new_vol% 2> /dev/null
 		fi
 	done
+}
+
+change_mic_volume_standard(){
+	# take the stream ID of a microphone and change its volume
+
+	new_vol=$2
+
+	mic_sid=$1
+
+
 }
 
 toggle_mute() {
