@@ -9,12 +9,12 @@ I am open to supporting other window systems if there is sufficient interest.
 # Installation as a foreground script
 
 1. Clone this repository. `git clone https://github.com/Jafner/pamidi.git`
-2. Make the script executable. `chmod +x pamidi.sh`
+2. Make the script executable. `cd pamidi && chmod +x pamidi.sh`
 3. Run the script. `./pamidi.sh`
 
 # Installation as a daemon with `systemd`
 1. Clone this repository. `git clone https://github.com/Jafner/pamidi.git`
-2. Make the installation script executable with `chmod +x install_daemon_systemd.sh`
+2. Make the installation script executable with `cd pamidi && chmod +x install_daemon_systemd.sh`
 3. Run the installation script with `./install_daemon_systemd.sh`
 
 # Modifying the script
