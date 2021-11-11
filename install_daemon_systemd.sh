@@ -2,7 +2,7 @@
 
 echo "Installing script..."
 chmod +x pamidi.sh
-cp pamidi.sh /usr/bin/pamidi
+sudo cp pamidi.sh /usr/bin/pamidi
 echo "Installing daemon..."
 mkdir -p ~/.config/systemd/user/
 cp pamidi.service ~/.config/systemd/user/
