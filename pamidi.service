@@ -2,7 +2,7 @@
 Description=Control PulseAudio with a Midi device
 
 [Service]
-ExecStart=/usr/bin/pamidi.sh
+ExecStart=/usr/bin/pamidi
 
 [Install]
 WantedBy=default.target
