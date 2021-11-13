@@ -38,6 +38,11 @@ initialize(){
 	else
 		echo "xdotool found"
 	fi
+	echo "Waiting for pulseaudio service to start..."
+	while [ ! $(systemctl --machine=joey@.host --user status pamidi.service) ]; do
+		echo "Pulseaudio service not started, waiting..."
+		sleep 2
+	done
 	col_1_app_pid=-1
 	col_2_app_pid=-1
 	col_3_app_pid=-1
@@ -48,6 +53,7 @@ initialize(){
 	col_8_app_pid=-1
 	assign_profile_1
 	print_col_app_ids
+	echo "Initialized pamidi"
 	notify-send "Initialized pamidi"
 }
 

@@ -1,5 +1,6 @@
 [Unit]
 Description=Control PulseAudio with a Midi device
+After=pulseaudio.service
 
 [Service]
 ExecStart=/usr/bin/pamidi
