@@ -39,10 +39,16 @@ initialize(){
 		echo "xdotool found"
 	fi
 	echo "Waiting for pulseaudio service to start..."
-	while [ ! $(systemctl --machine=joey@.host --user status pamidi.service) ]; do
+	while [[ $(systemctl --machine=joey@.host --user is-active --quiet pulseaudio) ]]; do
 		echo "Pulseaudio service not started, waiting..."
 		sleep 2
 	done
+	echo "Waiting for X-TOUCH MINI to be connected..."
+	while [[ ! $(lsusb | grep "X-TOUCH MINI") ]]
+	do
+		echo "X-TOUCH MINI not connected. Waiting..."
+		sleep 2
+	done 
 	col_1_app_pid=-1
 	col_2_app_pid=-1
 	col_3_app_pid=-1
